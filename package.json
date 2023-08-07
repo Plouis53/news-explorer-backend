@@ -17,10 +17,12 @@
     "url": "https://github.com/Plouis53/news-explorer-backend/issues"
   },
   "dependencies": {
+    "celebrate": "^15.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-rate-limit": "^6.9.0",
+    "helmet": "^7.0.0",
     "mongoose": "^6.6.1"
   },
   "devDependencies": {
