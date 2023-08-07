@@ -3,14 +3,24 @@
   "version": "1.0.0",
   "description": "The back-end project is focused on creating a server for the News Explorer application. You’ll gain a deeper understanding of how to work with databases, set up security and testing, and deploy web applications on a remote machine. The eventual goal is to create a server with an API and user authorization. ## Running the Project `npm run start` — to launch the server",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plouis53/news-explorer-backend.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint ."
   },
   "author": "Phillippe Louis",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Plouis53/news-explorer-backend/issues"
+  },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-rate-limit": "^6.9.0",
     "mongoose": "^6.6.1"
   },
   "devDependencies": {
