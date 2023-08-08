@@ -15,7 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://127.0.0.1:27017/wtwr_db", (error) => {
+mongoose.connect("mongodb://127.0.0.1:27017/article_db", (error) => {
   if (error) {
     console.error("Error connecting to the database:", error);
   } else {
