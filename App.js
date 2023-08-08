@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const { errors } = require("celebrate"); // Import celebrate before error-handler
-const helmet = require("helmet");
+// const helmet = require("helmet");
 const bodyParser = require("body-parser");
 const { limiter } = require("./utils/config");
 const errorHandler = require("./middlewares/error-handler");
@@ -28,7 +28,7 @@ const routes = require("./routes");
 app.use(express.json());
 app.use(cors());
 
-app.use(helmet());
+// app.use(helmet());
 
 app.use(requestLogger);
 app.use(limiter);
