@@ -1,26 +1,21 @@
-const bcrypt = require("bcryptjs");
-
-const jwt = require("jsonwebtoken");
-
-const User = require("../models/user");
-
 require("dotenv").config();
-
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("../models/user");
 const { REACT_APP_JWT_SECRET = "dev-key" } = process.env;
-
 const { NotFoundError } = require("../errors/not-found-error");
 const { ConflictError } = require("../errors/conflict-error");
 const { BadRequestError } = require("../errors/bad-request-error");
 
 module.exports.createUser = (req, res, next) => {
-  const { name, avatar, email, password } = req.body;
+  const { name, email, password } = req.body;
 
   bcrypt
     .hash(password, 10)
     .then((hash) => {
-      User.create({ name, avatar, email, password: hash })
+      User.create({ name, email, password: hash })
         .then((user) => {
-          res.send({ name, avatar, email, _id: user._id });
+          res.send({ name, email, _id: user._id });
         })
         .catch((err) => {
           if (err.code === 11000) {
