@@ -3,15 +3,15 @@ const articles = require("./articles");
 const User = require("./user");
 const { NotFoundError } = require("../errors/not-found-error");
 const { signin, createUser } = require("../controllers/user");
-const auth = require("../middlewares/auth");
+// const auth = require("../middlewares/auth");
 const {
   validateUserInfo,
   validateUserSignin,
 } = require("../middlewares/validator");
 
-router.use("/articles", auth, articles);
+router.use("/articles", articles);
 
-router.use("/users", auth, User);
+router.use("/users", User);
 
 router.post("/signin", validateUserSignin, signin);
 
