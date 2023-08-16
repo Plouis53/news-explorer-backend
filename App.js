@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const { errors } = require("celebrate"); // Import celebrate before error-handler
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
-const { limiter } = require("./utils/config");
+
 const errorHandler = require("./middlewares/error-handler");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
 
@@ -28,7 +28,6 @@ app.use(cors());
 app.use(helmet());
 
 app.use(requestLogger);
-app.use(limiter);
 
 app.get("/crash-test", () => {
   setTimeout(() => {
