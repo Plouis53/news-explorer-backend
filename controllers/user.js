@@ -2,7 +2,8 @@ require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
-const { REACT_APP_JWT_SECRET = "dev-key" } = process.env;
+// const { REACT_APP_JWT_SECRET = "dev-key" } = process.env;
+const { JWT_SECRET } = require("../utils/config");
 const { NotFoundError } = require("../errors/not-found-error");
 const { ConflictError } = require("../errors/conflict-error");
 const { BadRequestError } = require("../errors/bad-request-error");
@@ -35,7 +36,7 @@ module.exports.signin = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, REACT_APP_JWT_SECRET, {
+      const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
         expiresIn: "7d",
       });
       res.send({ token });

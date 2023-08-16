@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const { REACT_APP_JWT_SECRET = "dev-key" } = process.env;
+// const { REACT_APP_JWT_SECRET = "dev-key" } = process.env;
+const { JWT_SECRET } = require("../utils/config");
 const exctractBearerToken = (header) => header.replace("Bearer ", "");
 const { UnauthorizedError } = require("../errors/unauthorized-error");
 
@@ -16,7 +17,7 @@ module.exports.authorization = (req, res, next) => {
     let payload;
 
     try {
-      payload = jwt.verify(token, REACT_APP_JWT_SECRET);
+      payload = jwt.verify(token, JWT_SECRET);
     } catch (err) {
       next(new UnauthorizedError("Authorization required"));
       return;
