@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const articles = require("./articles");
 const User = require("./user");
-const { NotFoundError } = require("../errors/not-found-error");
 const { signin, createUser } = require("../controllers/user");
-// const auth = require("../middlewares/auth");
+
 const {
   validateUserInfo,
   validateUserSignin,
 } = require("../middlewares/validator");
+const { NotFoundError } = require("../errors/not-found-error");
 
 router.use("/articles", articles);
 
