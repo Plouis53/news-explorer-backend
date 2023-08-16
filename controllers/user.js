@@ -2,7 +2,7 @@ require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
-// const { REACT_APP_JWT_SECRET = "dev-key" } = process.env;
+
 const { JWT_SECRET } = require("../utils/config");
 const { NotFoundError } = require("../errors/not-found-error");
 const { ConflictError } = require("../errors/conflict-error");
