@@ -9,6 +9,7 @@ module.exports.getArticles = (req, res, next) => {
     .catch(next);
 };
 module.exports.addArticle = (req, res, next) => {
+  console.log(this.addArticle);
   const { keyword, title, text, date, source, link, image } = req.body;
   const owner = req.user._id;
   Article.create({ keyword, title, text, date, source, link, image, owner })
@@ -18,6 +19,7 @@ module.exports.addArticle = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === "ValidationError") {
+        console.log(err);
         next(new BadRequestError("Data provided is invalid"));
       } else {
         next(err);
