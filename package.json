@@ -32,6 +32,7 @@
     "install": "^0.13.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.6.1",
+    "semver": "^7.0.0",
     "validator": "^13.9.0",
     "winston": "^3.9.0"
   },
