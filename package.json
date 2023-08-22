@@ -21,8 +21,9 @@
     "express-winston": "^4.2.0",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.4.3 ",
+    "mongoose": "^6.10.0",
     "pg-promise": "^11.5.0",
+    "semver": "^7.5.4",
     "validator": "^13.9.0",
     "winston": "^3.10.0"
   },
