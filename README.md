@@ -7,3 +7,7 @@ This backend project supports the frontend application News Explorer (https://gi
 npm run start — to launch the server
 
 npm run dev — to launch the server with the hot reload feature
+
+- [Website Link](https://newsquest.mooo.com)
+
+- [Backend Link](https://api.newsquest.mooo.com)
