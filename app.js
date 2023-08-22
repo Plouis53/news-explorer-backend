@@ -15,13 +15,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb://127.0.0.1:27017/article_db", (error) => {
-  if (error) {
-    console.error("Error connecting to the database:", error);
-  } else {
-    console.log("Connected to the database");
-  }
-});
+mongoose
+  .connect("mongodb://127.0.0.1:27017/article_db")
+  .then((res) => {
+    console.log("Database connected");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 const routes = require("./routes");
 
@@ -47,5 +48,5 @@ app.use(errorHandler); // our centralized handler
 app.listen(PORT, () => {
   console.log("hello");
   console.log(`App listening at port ${PORT}`);
-  console.log("Working");
+  console.log("Connected to the database");
 });
